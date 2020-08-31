@@ -1,3 +1,4 @@
+// @ts-nocheck
 let launches;
 
 const numberHeading = "No.".padStart(5);
@@ -21,10 +22,17 @@ function loadLaunches() {
 
 function loadPlanets() {
   // TODO: Once API is ready.
-  // const planetSelector = document.getElementById("planets-selector");
-  // planets.forEach((planet) => {
-  //   planetSelector.innerHTML += `<option value="${planet.kepler_name}">${planet.kepler_name}</option>`;
-  // });
+
+  return fetch("/planets")
+    // Takes result of the planets call and parses it as Json
+    .then((planetsresponse) => planetsresponse.json())
+    .then((planets) => {
+      const planetSelector = document.getElementById("planets-selector");
+      planets.forEach((planet) => {
+        planetSelector.innerHTML +=
+          `<option value="${planet.kepler_name}">${planet.kepler_name}</option>`;
+      });
+    });
 }
 
 function abortLaunch() {
