@@ -3,6 +3,9 @@ import {
   assertEquals,
   assertNotEquals,
 } from "https://deno.land/std@0.53.0/testing/asserts.ts";
+
+import * as log from "https://deno.land/std/log/mod.ts";
+
 import { filtersHabitablePlanets } from "./planets.ts";
 
 //Test runner in the CLI
