@@ -9,6 +9,7 @@ router.get("/", (ctx) => {
 });
 
 router.get("/planets", (ctx) => {
+  throw new Error("Sample Error");
   ctx.response.body = planets.getAllPlanets();
 });
 
