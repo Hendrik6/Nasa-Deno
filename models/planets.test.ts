@@ -84,7 +84,7 @@ Deno.test({
   name: "ops",
   sanitizeOps: false,
   fn() {
-    setTimeout(console.log, 10);
+    setTimeout(log.info, 10);
   },
 });
 
