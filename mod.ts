@@ -5,7 +5,7 @@ import * as log from "https://deno.land/std/log/mod.ts";
 import api from "./api.ts";
 
 const app = new Application();
-const PORT = 8000;
+const PORT = 8080;
 
 await log.setup({
   handlers: {

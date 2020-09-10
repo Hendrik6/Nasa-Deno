@@ -51,3 +51,8 @@ export async function downloadLaunchData() {
 
 await downloadLaunchData();
 log.info(`Downloaded data for ${launches.size} SpaceX launches.`);
+
+//Return a list of all the values in the map
+export function getAll() {
+  return Array.from(launches.values());
+}
