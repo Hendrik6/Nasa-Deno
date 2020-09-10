@@ -50,4 +50,4 @@ export async function downloadLaunchData() {
 }
 
 await downloadLaunchData();
-log.info(JSON.stringify(import.meta));
+log.info(`Downloaded data for ${launches.size} SpaceX launches.`);
