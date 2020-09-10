@@ -2,6 +2,7 @@ import { Router } from "https://deno.land/x/oak@v5.0.0/mod.ts";
 
 import * as planets from "./models/planets.ts";
 import * as launches from "./models/launches.ts";
+import { assertThrowsAsync } from "https://deno.land/std@0.53.0/testing/asserts.ts";
 
 const router = new Router();
 
@@ -32,6 +33,15 @@ router.get("/launches/:id", (ctx) => {
       ctx.throw(400, "Launch with that ID doesn't exist");
     }
   }
+});
+
+router.post("/launches", async (ctx) => {
+  const body = await ctx.request.body();
+
+  launches.addOne(body.value);
+
+  ctx.response.body = { success: true };
+  ctx.response.status = 201;
 });
 
 export default router;
