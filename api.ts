@@ -19,4 +19,19 @@ router.get("/launches", (ctx) => {
   ctx.response.body = launches.getAll();
 });
 
+//Passing in the colon syntax ID
+router.get("/launches/:id", (ctx) => {
+  //using the '?' so we return an undefined if the params field doesn't exist. Instead of returning an error.
+  //could have also used (if ctx.params && ctx.params.id)
+  if (ctx.params?.id) {
+    const launchesList = launches.getOne(Number(ctx.params.id));
+    if (launchesList) {
+      console.log(launchesList, "launcheslist");
+      ctx.response.body = launchesList;
+    } else {
+      ctx.throw(400, "Launch with that ID doesn't exist");
+    }
+  }
+});
+
 export default router;

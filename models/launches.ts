@@ -56,3 +56,14 @@ log.info(`Downloaded data for ${launches.size} SpaceX launches.`);
 export function getAll() {
   return Array.from(launches.values());
 }
+
+//Return a specific launch
+export function getOne(id: number) {
+  //Querying the map that has the flight number as the key
+  //But we only want to get this if the id exists
+  if (launches.has(id)) {
+    return launches.get(id);
+  }
+
+  return null;
+}
