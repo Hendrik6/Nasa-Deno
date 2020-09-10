@@ -9,7 +9,8 @@ router.get("/", (ctx) => {
 });
 
 router.get("/planets", (ctx) => {
-  throw new Error("Sample Error");
+  //Can also change the error code to smth like 501 to specify the error message
+  //ctx.throw(401, "Sorry, Planets aren't available!");
   ctx.response.body = planets.getAllPlanets();
 });
 
