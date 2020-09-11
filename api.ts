@@ -1,4 +1,4 @@
-import { Router } from "https://deno.land/x/oak@v5.0.0/mod.ts";
+import { Context, Router } from "https://deno.land/x/oak@v5.0.0/mod.ts";
 
 import * as planets from "./models/planets.ts";
 import * as launches from "./models/launches.ts";
@@ -32,6 +32,13 @@ router.get("/launches/:id", (ctx) => {
     } else {
       ctx.throw(400, "Launch with that ID doesn't exist");
     }
+  }
+});
+
+router.delete("/launches/:id", (ctx) => {
+  if (ctx.params?.id) {
+    const result = launches.removeOne(Number(ctx.params.id));
+    ctx.response.body = { success: result };
   }
 });
 
