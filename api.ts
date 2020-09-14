@@ -1,8 +1,7 @@
-import { Context, Router } from "https://deno.land/x/oak@v5.0.0/mod.ts";
+import { Router } from "./deps.ts";
 
 import * as planets from "./models/planets.ts";
 import * as launches from "./models/launches.ts";
-import { assertThrowsAsync } from "https://deno.land/std@0.53.0/testing/asserts.ts";
 
 const router = new Router();
 
