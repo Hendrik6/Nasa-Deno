@@ -2,7 +2,7 @@
 import {
   assertEquals,
   assertNotEquals,
-} from "https://deno.land/std@0.53.0/testing/asserts.ts";
+} from "../test_deps.ts";
 
 import * as log from "https://deno.land/std/log/mod.ts";
 

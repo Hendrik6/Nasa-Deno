@@ -1,8 +1,8 @@
 // Standard lib deps
-export * as log from "https://deno.land/std/log/mod.ts";
-export { join } from "https://deno.land/std/path/mod.ts";
-export { parse } from "https://deno.land/std/encoding/csv.ts";
-export { BufReader } from "https://deno.land/std/io/bufio.ts";
+export * as log from "https://deno.land/std@0.56.0/log/mod.ts";
+export { join } from "https://deno.land/std@0.56.0/path/mod.ts";
+export { parse } from "https://deno.land/std@0.56.0/encoding/csv.ts";
+export { BufReader } from "https://deno.land/std@0.56.0/io/bufio.ts";
 
 //Third party deps
 export {
